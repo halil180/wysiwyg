@@ -1,0 +1,16 @@
+<!-- <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]="e"></ckeditor> -->
+<!-- <ckeditor type="inline" [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]="e"></ckeditor>
+<app-test [e]="e" ></app-test>
+
+
+<ckeditor [(ngModel)]="model.editorData" [editor]="Editor"></ckeditor>
+
+{{model.editorData }} -->
+
+
+
+
+
+
+
+<ckeditor [editor]="editor" [data]="data" (ready)="onReady($event)"></ckeditor>
