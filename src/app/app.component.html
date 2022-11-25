@@ -7,10 +7,14 @@
 
 {{model.editorData }} -->
 
+<ckeditor [(ngModel)]="model.editorData" [editor]="editor" (ready)="onReady($event)"></ckeditor>
 
+{{model.editorData }}
 
+<div [innerHTML]="model.editorData "></div>
 
 
 
 
 <ckeditor [editor]="editor" [data]="data" (ready)="onReady($event)"></ckeditor>
+

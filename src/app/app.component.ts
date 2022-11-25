@@ -32,12 +32,13 @@ export class AppComponent {
   // e!:any
 
   
-//   public model:any = {
-//     editorData: `test works! <figure class="table"><table><tbody><tr><td>hi</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>coders</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>material</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>asdasd</p>`
-// };
+  public model:any = {
+    editorData: `test works! <figure class="table"><table><tbody><tr><td>hi</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>coders</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>material</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p>asdasd</p>`
+};
 
 name = 'Angular';
 editor = InlineEditor;
+
 data: any = `<p>Hello, world!</p>`;
 
 
@@ -49,5 +50,38 @@ onReady(eventData) {
   };
 }
 
-
+    constructor(){
+      InlineEditor.defaultConfig = {
+        toolbar: {
+          items: [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            '|',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'insertTable',
+            '|',
+            'imageUpload',
+            '|',
+            'undo',
+            'redo'
+          ]
+        },
+        image: {
+          toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+          ]
+        },
+        table: {
+          contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+        },
+        language: 'en'
+      };
+    }
 }
